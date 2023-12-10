@@ -65,7 +65,9 @@ public class MainController {
     @GetMapping("/pizzas/edit/{id}")
     public String editPizza(Model model, @PathVariable int id) {
         Pizza pizza = pizzaService.findById(id);
+        
         model.addAttribute("pizza", pizza);
+        
         return "newPizza";
     }
 

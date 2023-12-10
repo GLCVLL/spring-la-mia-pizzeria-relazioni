@@ -36,6 +36,16 @@
                 </form>
 			</div>
             <a class="btn btn-primary" th:href="@{/}">Torna alla lista Pizze</a>
+            <div class="d-flex">
+				<h5>Discounts:</h5>
+                <ul class="list-unstyled">
+                   <li th:each="discount : ${pizza.discounts}">
+                      <p th:text="${discount.title}"></p>
+                      <p th:text="${discount.startDate}"></p>
+                      <p th:text="${discount.endDate}"></p>
+                   </li>
+                </ul>
+			</div>
         </div>
     </div>
 </div>

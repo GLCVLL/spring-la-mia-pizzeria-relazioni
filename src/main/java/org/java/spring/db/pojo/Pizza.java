@@ -1,5 +1,7 @@
 package org.java.spring.db.pojo;
 
+import java.util.List;
+
 import org.hibernate.validator.constraints.Length;
 
 import jakarta.persistence.Column;
@@ -7,6 +9,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 
@@ -29,6 +32,9 @@ public class Pizza {
     @NotNull(message = "Il prezzo della pizza non può essere nullo.")
     @Positive(message = "Il prezzo deve essere un valore positivo.")
     private float price;
+    
+    @OneToMany(mappedBy = "pizza")
+	private List<Discount> discounts;
     
 	public Pizza() { }
 	public Pizza(String name, String description, String img, float price) {
@@ -67,6 +73,12 @@ public class Pizza {
 	}
 	public void setPrice(float price) {
 		this.price = price;
+	}
+	public List<Discount> getDiscounts() {
+		return discounts;
+	}
+	public void setDiscounts(List<Discount> discounts) {
+		this.discounts = discounts;
 	}
 	
 	@Override
