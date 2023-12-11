@@ -42,6 +42,7 @@ public class Application implements CommandLineRunner {
 		Ingredient cheese = new Ingredient("Formaggio");
 		Ingredient salame = new Ingredient("Salame");
 		
+		
 		ingredientService.save(tomato);
 		ingredientService.save(mozzarella);
 		ingredientService.save(mushrooms);

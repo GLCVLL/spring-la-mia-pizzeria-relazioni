@@ -24,4 +24,12 @@ public class IngredientService {
 		
 		ingredientRepo.save(ingredient);
 	}
+	
+    public void delete(Ingredient ingredient) {
+        ingredientRepo.delete(ingredient);
+    }
+
+    public List<Ingredient> findByName(String name) {
+        return ingredientRepo.findByName(name);
+    }
 }

@@ -29,6 +29,13 @@
             <div th:replace="frags :: errorDiv('price')" />
 
         </div>
+        <label for="ingredients">Seleziona gli ingredienti:</label><br>
+        <div class="my-3" th:each="ingredient : ${ingredients}">
+            <input type="checkbox" th:id="${'ingredient-' + ingredient.id}"
+                   th:value="${ingredient.id}" th:field="${pizza.ingredients}">
+            <label th:for="${'ingredient-' + ingredient.id}" th:text="${ingredient.name}"></label>
+        </div>
+        <a href="/ingredients" class="btn btn-info my-3">Vai alla lista degli ingredienti</a>
         <button type="submit" class="btn btn-primary">Salva Pizza</button>
     </form>
     
