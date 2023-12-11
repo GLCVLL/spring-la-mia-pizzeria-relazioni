@@ -18,7 +18,7 @@ public class Ingredient {
 	
 	private String name;
 	
-    @ManyToMany(mappedBy = "ingredients", cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "ingredients")
     private List<Pizza> pizzas;
     
 	public Ingredient() { }
